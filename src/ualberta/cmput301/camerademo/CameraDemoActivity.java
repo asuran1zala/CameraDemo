@@ -70,9 +70,9 @@ public class CameraDemoActivity extends Activity {
 		
 		if (requestCode == 0) {
 			if (resultCode == RESULT_OK) {
-				//Bitmap bm = (Bitmap) data.getExtras().getParcelable("data");
-				Bitmap bMap = BitmapFactory.decodeStream(data.getExtras());
-				Bitmap newbm = Bitmap.createScaledBitmap(bMap, imageButton.getWidth(), imageButton.getHeight(), false);
+				Bitmap bm = (Bitmap) data.getExtras().getParcelable("data");
+				//Bitmap bMap = BitmapFactory.decodeStream(data.getExtras());
+				Bitmap newbm = Bitmap.createScaledBitmap(bm, imageButton.getWidth(), imageButton.getHeight(), false);
 				imageButton.setImageBitmap(newbm);
 				textView.setText("Photo OK");
 			} else if(resultCode == RESULT_CANCELED) {
